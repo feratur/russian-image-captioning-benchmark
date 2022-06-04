@@ -41,6 +41,16 @@ The process includes downloading the dataset, downloading models and their check
 After the evaluation process is finished the files in `artifacts` directory will be overwritten with newly generated ones.
 
 ## Conclusions and future work
+The each model the [RuCLIP](https://github.com/ai-forever/ru-clip) similarity scores of 5000 COCO image-caption pairs were normally distributed with the following parameters:
+
+Model | mean | stdev
+--- | --- | ---
+RuDOLPH ru | 0.2300 | 0.0902
+BLIP en-ru | 0.3326 | 0.0732
+OFA en-ru | **0.3696** | 0.0597
+Ground truth: COCO en-ru | 0.4133 | 0.0596
+
+It is quite evident that, according to my evaluation method, [OFA](https://github.com/OFA-Sys/OFA)-generated captions turned out to be the best, very close to the score of human-written and translated annotations. [BLIP](https://github.com/salesforce/BLIP) model was only slightly behind the first place and [RuDOLPH](https://github.com/ai-forever/ru-dolph), surprisingly, demonstrated the worst performance - even though it generates captions already in Russian so no possible translation error, that may harm the annotation quality, is introduced.
 
 ### Histogram of ruCLIP scores for compared models
 ![Alt text](artifacts/hist.png?raw=true "Comparison histogram")
