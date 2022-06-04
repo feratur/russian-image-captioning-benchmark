@@ -55,6 +55,23 @@ It is quite evident that, according to my evaluation method, [OFA](https://githu
 ### Histogram of RuCLIP similirity scores for models on COCO Captions (val2017) dataset
 ![Alt text](artifacts/hist.png?raw=true "Comparison histogram")
 
+### Room for improvement
+> Improve the quality of the generated text
+
+Implement best answer selection not using PPL internally, but using a reranker (such as [RuCLIP](https://github.com/ai-forever/ru-clip)) on downstream task.
+
+> Improve inference speed and memory requirements
+
+Remove intermediate steps (such as en-ru translation) and try optimization techniques, such as knowledge distillation, quantization, weight/layer pruning, weight sharing, ONNX/TensorRT optimizations, migration to Google TPUs/AWS Inferentia ASICs/Xilinx FPGAs/etc.
+
+> Lower training costs
+
+Utilize pretrained models as much as possible ([CLIP](https://github.com/openai/CLIP) weights for image encoding, [ruGPT3](https://github.com/ai-forever/ru-gpts), [mGPT](https://github.com/ai-forever/mgpt) or [ruT5](https://huggingface.co/sberbank-ai/ruT5-large) for Russian text generation).
+
+> Add extra usage scenarios
+
+Implement all capabilities of multitask/multimodal models ([OFA](https://github.com/OFA-Sys/OFA), [BLIP](https://github.com/salesforce/BLIP), [RuDOLPH](https://github.com/ai-forever/ru-dolph)), such as Text-to-Image Generation, Visual Grounding, Visual Question Answering, Zero-Shot Image Classification, Inpainting.
+
 ### Next steps
 - Use completely the same text generation parameters across all models, generate multiple annotaion variants at once and evaluate the models using standard metrics (BLEU, METEOR, ROUGE, CIDEr, SPICE);
 - Add more models to comparison;
