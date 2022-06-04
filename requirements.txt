@@ -1,0 +1,15 @@
+more-itertools==8.10.0
+transformers==4.10.3
+sentencepiece==0.1.96
+numpy==1.21.6
+opencv-python==4.5.4.60
+timm==0.3.2
+ftfy==6.0.3
+tensorboardX==2.4.1
+protobuf==3.19.4
+fairscale==0.4.4
+pytorch_lightning==1.6.4
+einops==0.3.2
+datasets==2.2.2
+rudolph==0.0.1rc8
+tqdm==4.64.0
