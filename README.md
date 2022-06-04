@@ -52,6 +52,6 @@ Ground truth: COCO en-ru | 0.4133 | 0.0596
 
 It is quite evident that, according to my evaluation method, [OFA](https://github.com/OFA-Sys/OFA)-generated captions turned out to be the best, very close to the score of human-written and translated annotations. [BLIP](https://github.com/salesforce/BLIP) model was only slightly behind the first place and [RuDOLPH](https://github.com/ai-forever/ru-dolph), surprisingly, demonstrated the worst performance - even though it generates captions already in Russian so no possible translation error, that may harm the annotation quality, is introduced.
 
-### Histogram of ruCLIP scores for compared models
+### Histogram of RuCLIP similirity scores for models on COCO Captions (val2017) dataset 
 ![Alt text](artifacts/hist.png?raw=true "Comparison histogram")
 
