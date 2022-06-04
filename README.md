@@ -52,6 +52,13 @@ Ground truth: COCO en-ru | 0.4133 | 0.0596
 
 It is quite evident that, according to my evaluation method, [OFA](https://github.com/OFA-Sys/OFA)-generated captions turned out to be the best, very close to the score of human-written and translated annotations. [BLIP](https://github.com/salesforce/BLIP) model was only slightly behind the first place and [RuDOLPH](https://github.com/ai-forever/ru-dolph), surprisingly, demonstrated the worst performance - even though it generates captions already in Russian so no possible translation error, that may harm the annotation quality, is introduced.
 
-### Histogram of RuCLIP similirity scores for models on COCO Captions (val2017) dataset 
+### Histogram of RuCLIP similirity scores for models on COCO Captions (val2017) dataset
 ![Alt text](artifacts/hist.png?raw=true "Comparison histogram")
 
+### Next steps
+- Use completely the same text generation parameters across all models, generate multiple annotaion variants at once and evaluate the models using standard metrics (BLEU, METEOR, ROUGE, CIDEr, SPICE);
+- Add more models to comparison;
+- Evaluate the models on different datasets ([nocaps](https://nocaps.org/), [Conceptual Captions](https://github.com/google-research-datasets/conceptual-captions), [Flickr30k](https://shannon.cs.illinois.edu/DenotationGraph/)), translated into Russian (or make/find original Russian image-text pair dataset);
+- Train/finetune popular architectures ([OFA](https://github.com/OFA-Sys/OFA), [BLIP](https://github.com/salesforce/BLIP)) on Russian corpus for generating Russian annotations without intermediate translation;
+- Implement [ClipCap: CLIP Prefix for Image Captioning](https://arxiv.org/pdf/2111.09734v1.pdf) paper, using recently released [CLIP](https://github.com/openai/CLIP) `ViT-L/14@336px` weights and [ruGPT3](https://github.com/ai-forever/ru-gpts) or [mGPT](https://github.com/ai-forever/mgpt) as the Decoder;
+- ...
